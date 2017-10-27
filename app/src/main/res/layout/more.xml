@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--顶部-->
+    <RelativeLayout
+        android:id="@+id/info_top"
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/linegray">
+
+        <!--商品图片-->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/arla" />
+
+        <!--返回按钮-->
+        <ImageView
+            android:id="@+id/Back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/back"
+            android:layout_alignTop="@id/image"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            tools:ignore="ContentDescription" />
+
+        <!--商品名称-->
+        <TextView
+            android:id="@+id/info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ferrero Rocher"
+            android:layout_alignStart="@id/Back"
+            android:layout_alignBottom="@id/image"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="15dp" />
+
+        <!--收藏按钮-->
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/empty_star"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/image"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="30dp"
+            tools:ignore="ContentDescription" />
+
+
+    </RelativeLayout>
+
+    <!--中部-->
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <!--价格-->
+        <TextView
+            android:id="@+id/info_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¥132.59"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp" />
+
+        <!--信息-->
+        <TextView
+            android:id="@+id/info1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="重量 300g"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/wordgray"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/splitline_hor" />
+
+        <!--加入购物车按钮-->
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/shoplist"
+            android:scaleType="fitCenter"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/shop"
+            app:layout_constraintBottom_toTopOf="@+id/splitline_hor"
+
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <!--水平分割线-->
+        <View
+            android:id="@+id/splitline_hor"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:background="@color/linegray"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/moreInfo"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <!--竖直分割线-->
+        <View
+            android:id="@+id/splitline_ver"
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/linegray"
+            app:layout_constraintBottom_toTopOf="@+id/splitline_hor"
+            app:layout_constraintRight_toLeftOf="@+id/shop"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--更多产品信息-->
+        <TextView
+            android:id="@+id/moreInfo"
+            android:layout_width="204dp"
+            android:layout_height="29dp"
+            android:text="更多产品信息"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/splitline_hor2"
+            android:layout_marginStart="10dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <View
+            android:id="@+id/splitline_hor2"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:background="@color/linegray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="0dp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ListView
+        android:id="@+id/listView_info"
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+</LinearLayout>
